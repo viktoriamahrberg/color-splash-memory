@@ -1,18 +1,24 @@
 
 body {
-    font-family: 'Poiret One', sans-serif;
+    font-family: 'Codystar', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
 
-
+h2 {
+    text-align: center;
+   
+    font-size: 1.8rem;
 }
 #logo { 
-    font-family: 'Finger Paint', sans-serif;
+    font-family: 'Nosifer', sans-serif;
     font-size: 45px;
     color: #2fd49d;
     text-align: center;
 }
 .game-area {
 
-    height: 70vh;
+    height: 100vh;
     max-width: 70%;
     background-color: rgb(241, 247, 246);
     border: solid 2px #2fd49d;
@@ -31,5 +37,23 @@ background-color: black;
     height: 150px;
     width: 22%;
     margin: 0 auto;
+    border-radius: 10%;
    
+}
+#count-area-timing {
+    display: block;
+    float: left;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+#count-area-moves {
+    display: block;
+    float: right;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+#result-area {
+    text-align: center;
+
+    
 }
