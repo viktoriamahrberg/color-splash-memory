@@ -1,4 +1,11 @@
 
 body {
-    font-family: Codystar, sans-serif;
+    font-family: 'Poiret One', sans-serif;
+
+}
+#logo { 
+    font-family: 'Finger Paint', sans-serif;
+    font-size: 45px;
+    color: #e2687d;
+    text-align: center;
 }
