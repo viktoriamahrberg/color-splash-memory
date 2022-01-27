@@ -2,6 +2,7 @@
 body {
     font-family: 'Poiret One', sans-serif;
 
+
 }
 #logo { 
     font-family: 'Finger Paint', sans-serif;
@@ -10,13 +11,25 @@ body {
     text-align: center;
 }
 .game-area {
-    width: 90%;
+
     height: 70vh;
-    max-width: 800px;
-    max-height: fit-content;
+    max-width: 70%;
     background-color: rgb(241, 247, 246);
     border: solid 2px #2fd49d;
     border-radius: 1%;
     margin: 0 auto;
 
+}
+.memory-container {
+    display: flex;
+    padding-bottom: 20px;
+
+
+}
+.memory-card {
+background-color: black;
+    height: 150px;
+    width: 22%;
+    margin: 0 auto;
+   
 }
