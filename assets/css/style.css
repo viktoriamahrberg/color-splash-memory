@@ -10,6 +10,7 @@ p {
     padding-left: 10px;
     padding-right: 10px;
     line-height: 20px;
+    letter-spacing: 1px;
 }
 h2 {
     text-align: center;
@@ -28,7 +29,7 @@ h3 {
 }
 .game-area {
 
-    height: 100vh;
+    height: 150vh;
     max-width: 70%;
     background-color: rgb(241, 247, 246);
     border: solid 2px #2fd49d;
@@ -50,13 +51,15 @@ background-color: black;
     border-radius: 10%;
    
 }
-#count-area-timing {
+
+.counts
+.count-area-left {
     display: block;
     float: left;
     padding-left: 10px;
     padding-bottom: 20px;
 }
-#count-area-moves {
+.count-area-right {
     display: block;
     float: right;
     padding-right: 10px;
