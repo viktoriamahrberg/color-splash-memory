@@ -21,6 +21,10 @@ h3 {
     font-size: 1.5rem;
 
 }
+
+img {
+    width:fit-conte
+}
 #logo { 
     font-family: 'Nosifer', sans-serif;
     font-size: 45px;
@@ -29,7 +33,7 @@ h3 {
 }
 .game-area {
 
-    height: 150vh;
+    height: 130vh;
     max-width: 70%;
     background-color: rgb(241, 247, 246);
     border: solid 2px #2fd49d;
@@ -39,17 +43,33 @@ h3 {
 }
 .memory-container {
     display: flex;
-    padding-bottom: 20px;
+    flex-wrap: wrap;
+    height: 50%;
+    width: 100%;
+    margin: 0 auto;
 
 
 }
 .memory-card {
-background-color: black;
     height: 150px;
-    width: 22%;
+    width: calc(25% - 4%);
+    padding: 1%;
     margin: 0 auto;
     border-radius: 10%;
+    border: 1% solid black;
+    position: relative;
    
+}
+.back-face {
+     background-color: pink;
+}
+.front-face, 
+.back-face {
+    position: abosolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10%;
+    
 }
 
 .counts
