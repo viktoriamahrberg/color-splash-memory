@@ -1,9 +1,9 @@
-
 body {
     font-family: 'Codystar', sans-serif;
     font-size: 2rem;
     text-transform: uppercase;
 }
+
 p {
     font-family: 'Poiret One';
     font-size: 1rem;
@@ -12,6 +12,7 @@ p {
     line-height: 20px;
     letter-spacing: 1px;
 }
+
 h2 {
     text-align: center;
     font-size: 1.8rem;
@@ -23,16 +24,17 @@ h3 {
 }
 
 img {
-    width:fit-conte
+    width: 100px;
 }
-#logo { 
+
+#logo {
     font-family: 'Nosifer', sans-serif;
     font-size: 45px;
     color: #2fd49d;
     text-align: center;
 }
-.game-area {
 
+.game-area {
     height: 130vh;
     max-width: 70%;
     background-color: rgb(241, 247, 246);
@@ -41,52 +43,94 @@ img {
     margin: 0 auto;
 
 }
+
 .memory-container {
     display: flex;
     flex-wrap: wrap;
-    height: 50%;
+    height: 70%;
     width: 100%;
     margin: 0 auto;
-
-
+    perspective: 1000px;
 }
+
 .memory-card {
-    height: 150px;
+    height: calc(50% - 4%);
     width: calc(25% - 4%);
     padding: 1%;
     margin: 0 auto;
     border-radius: 10%;
     border: 1% solid black;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
     position: relative;
-   
-}
-.back-face {
-     background-color: pink;
-}
-.front-face, 
-.back-face {
-    position: abosolute;
-    height: 100%;
-    width: 100%;
-    border-radius: 10%;
-    
 }
 
-.counts
-.count-area-left {
+/* W3 SCHOOLS */
+
+.flip-card {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #2fd49d;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #2fd49d;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* W3 SCHOOLS */
+
+.counts .count-area-left {
     display: block;
     float: left;
     padding-left: 10px;
     padding-bottom: 20px;
 }
+
 .count-area-right {
     display: block;
     float: right;
     padding-right: 10px;
     padding-bottom: 20px;
 }
+
 #result-area {
     text-align: center;
-
-    
 }
