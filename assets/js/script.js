@@ -5,6 +5,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 
+
 // Just giving some slight pointers here in regards to variables 
 
 // check if card is turned 
@@ -33,41 +34,46 @@ function flipCard() {
     if (this === firstCard) return;
     if (lockBoard) return;
     this.classList.toggle('flip');
+  
 
     if (!turnedCard) {
         turnedCard = true;
         firstCard = this;
         selectedPairs.push(this);
+        
+        return;
 
     } else {  //second click
         lockBoard = true;
-        turnedCard = false;
+       turnedCard = false;
         secondCard = this;
-        selectedPairs.push(this);
+       selectedPairs.push(this);
         checkForMatch(selectedPairs[0], selectedPairs[1]);
     }
 
     if (selectedPairs.length === 2) {
-        checkForMatch(selectedPairs[0], selectedPairs[1]);
+      checkForMatch(selectedPairs[0], selectedPairs[1]);
     }
-    return;
 }
 
 /* Reset the board and timer
  */
 function runGame(shuffleCards) {
 
-
 }
+
+// Help and adjusted codes from Marina Ferreira https://github.com/code-sketch/memory-game.git 
 
 /* To see if the cards that have been flipped are matching
  */
 function checkForMatch() {
-    let isMatch = (firstCard.data-image) === (secondCard.data-image);
+    let isMatch = firstCard.data-image === secondCard.data-image;
+    
 
     isMatch ? disableCards() : unflipCards();
     
     matchedPairs.push(this);
+    alert('You found a match');
 }
 
 /* Locks cards that are a match 
