@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", shuffleCards)
+document.addEventListener("DOMContentLoaded", shuffleCards);
 
 const cards = document.querySelectorAll('.memory-card');
 cards.forEach(card => card.addEventListener('click', flipCard));
@@ -15,43 +15,44 @@ let lockBoard = false;
 
 // your cards
 let firstCard;
-let SecondCard;
+let secondCard;
 
 // both cards to enter into an array to check if their data is ===
 // in your game put in ai statement that if selectedPairs.length === 2 run a checkForMatch function
-let selectedPairs = []
+let selectedPairs = [];
 
 // an array to put the pairs that match into after you created a check for match function
-matchedPairs = []
+matchedPairs = [];
 
 console.log(cards);
-Timer();
 
 
 
 // Leaving the second card face upwards if its a match and locks bord after second card flipped
 function flipCard() {
-    if (this === firstCard) return
-    if (lockBoard) return
+    if (this === firstCard) return;
+    if (lockBoard) return;
     this.classList.toggle('flip');
 
     if (!turnedCard) {
         turnedCard = true;
         firstCard = this;
-        selectedPairs.push(this)
-    } else {
+        selectedPairs.push(this);
+
+    } else {  //second click
         lockBoard = true;
         turnedCard = false;
-        SecondCard = this;
-        selectedPairs.push(this)
+        secondCard = this;
+        selectedPairs.push(this);
+        checkForMatch(selectedPairs[0], selectedPairs[1]);
     }
 
     if (selectedPairs.length === 2) {
-        checkForMatch(selectedPairs[0], selectedPairs[1])
-        matchedPairs.push;
+        checkForMatch(selectedPairs[0], selectedPairs[1]);
     }
-
+    return;
 }
+
 /* Reset the board and timer
  */
 function runGame(shuffleCards) {
@@ -62,10 +63,11 @@ function runGame(shuffleCards) {
 /* To see if the cards that have been flipped are matching
  */
 function checkForMatch() {
-    let isMatch = firstCard.dataset.image === secondCard.dataset.image;
+    let isMatch = (firstCard.data-image) === (secondCard.data-image);
 
     isMatch ? disableCards() : unflipCards();
-
+    
+    matchedPairs.push(this);
 }
 
 /* Locks cards that are a match 
@@ -80,7 +82,7 @@ function disableCards() {
 /* Flipps cards back when not a match
  */
 function unflipCards() {
-    lockBoard = false;
+    lockBoard = true;
 
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -89,7 +91,8 @@ function unflipCards() {
         resetBoard();
     }, 1500);
 
-    runGame(incrementMoves[1]);
+    incrementMoves();
+    resetBoard();
 }
 
 
@@ -97,7 +100,7 @@ function unflipCards() {
  */
 function incrementMoves() {
     let oldMove = parseInt(document.getElementById("count-area-moves").innertext);
-    document.getElementById("count-area-moves").innertext = ++oldMove
+    document.getElementById("count-area-moves").innertext = ++oldMove;
 }
 
 /* Shuffle cards when game is reset
@@ -112,4 +115,4 @@ function shuffleCards() {
         let randomPos = Math.floor(Math.random() * 8);
         card.style.order = randomPos;
     });
-};
+}

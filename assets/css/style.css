@@ -11,6 +11,7 @@ p {
     padding-right: 10px;
     line-height: 20px;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 h2 {
@@ -30,7 +31,7 @@ img {
 #logo {
     font-family: 'Nosifer', sans-serif;
     font-size: 45px;
-    color: #2fd49d;
+    color: #8553c0;
     text-align: center;
 }
 
@@ -38,7 +39,7 @@ img {
     height: 130vh;
     max-width: 70%;
     background-color: rgb(241, 247, 246);
-    border: solid 2px #2fd49d;
+    border: solid 2px #8553c0;
     border-radius: 1%;
     margin: 0 auto;
 
@@ -99,12 +100,12 @@ img {
 }
 
 .flip-card-front {
-    background-color: #2fd49d;
+    background-color: #8553c0;
     color: black;
 }
 
 .flip-card-back {
-    background-color: #2fd49d;
+    background-color: #8553c0;
     color: white;
     transform: rotateY(180deg);
 }
@@ -140,45 +141,126 @@ img {
         height: 120vh;
         max-width: 70%;
     }
-.memory-container {
-    height: 0;
-}
+
+    .memory-container {
+        height: 0;
+    }
+
     .memory-card {
         height: 150px;
         width: 150px;
     }
+
     .flip-card img {
         width: 150px;
         height: 150px;
     }
+
     .flip-card {
         width: 150px;
         height: 150px;
     }
 }
-    @media screen and (max-width: 950px) {
-        #logo {
-            font-size: 35px;
-        }
 
-        p {
-            font-size: 0.7rem;
-        }
-
-        .game-area {
-            height: 100vh;
-        }
-        .memory-card {
-            height: 120px;
-            width: 120px;
-        }
-        .flip-card img {
-            width: 120px;
-            height: 120px;
-        }
-        .flip-card {
-            background-color: transparent;
-            width: 120px;
-            height: 120px;
-        }
+@media screen and (max-width: 950px) {
+    #logo {
+        font-size: 35px;
     }
+
+    p {
+        font-size: 0.7rem;
+    }
+
+    .game-area {
+        height: 100vh;
+    }
+
+    .memory-card {
+        height: 120px;
+        width: 120px;
+    }
+
+    .flip-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .memory-card {
+        height: 100px;
+        width: 100px;
+    }
+
+    .flip-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .memory-card {
+        height: 90px;
+        width: 90px;
+    }
+
+    .flip-card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .game-area {
+        height: 120vh;
+        max-width: 95%;
+    }
+
+    .memory-card {
+        height: 100px;
+        width: 100px;
+    }
+
+    .flip-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+
+    .flip-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 80px;
+        height: 80px;
+    }
+}
