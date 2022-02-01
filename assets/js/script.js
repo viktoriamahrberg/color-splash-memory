@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", shuffleCards)
 
-    const cards = document.querySelectorAll('.memory-card');
-    cards.forEach(card => card.addEventListener('click', flipCard));
+const cards = document.querySelectorAll('.memory-card');
+cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 
@@ -48,10 +48,10 @@ function flipCard() {
 
     if (selectedPairs.length === 2) {
         checkForMatch(selectedPairs[0], selectedPairs[1])
+        matchedPairs.push;
     }
 
 }
-debugger;
 /* Reset the board and timer
  */
 function runGame(shuffleCards) {
@@ -65,6 +65,7 @@ function checkForMatch() {
     let isMatch = firstCard.dataset.image === secondCard.dataset.image;
 
     isMatch ? disableCards() : unflipCards();
+
 }
 
 /* Locks cards that are a match 
@@ -77,9 +78,9 @@ function disableCards() {
 }
 
 /* Flipps cards back when not a match
-*/
+ */
 function unflipCards() {
-    lockBoard = true;
+    lockBoard = false;
 
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -87,25 +88,28 @@ function unflipCards() {
 
         resetBoard();
     }, 1500);
+
+    runGame(incrementMoves[1]);
 }
 
 
 /* Updates the Moves-section in DOM by incrementing one
  */
 function incrementMoves() {
-    let oldMove = parseInt(document.getElementById("count-area-moves").innertext = ++oldMove)
-    }
+    let oldMove = parseInt(document.getElementById("count-area-moves").innertext);
+    document.getElementById("count-area-moves").innertext = ++oldMove
+}
 
-    /* Shuffle cards when game is reset
-     */
-    function resetBoard() {
-        [hasFlippedCard, lockBoard] = [false, false];
-        [firstCard, secondCard] = [null, null];
-      }
+/* Shuffle cards when game is reset
+ */
+function resetBoard() {
+    [flipCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
+
 function shuffleCards() {
-        cards.forEach(card => {
-          let randomPos = Math.floor(Math.random() * 8);
-          card.style.order = randomPos;
-        });
-      };
-      
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 8);
+        card.style.order = randomPos;
+    });
+};

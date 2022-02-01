@@ -136,4 +136,49 @@ img {
 }
 
 @media screen and (max-width: 1200px) {
-    
+    .game-area {
+        height: 120vh;
+        max-width: 70%;
+    }
+.memory-container {
+    height: 0;
+}
+    .memory-card {
+        height: 150px;
+        width: 150px;
+    }
+    .flip-card img {
+        width: 150px;
+        height: 150px;
+    }
+    .flip-card {
+        width: 150px;
+        height: 150px;
+    }
+}
+    @media screen and (max-width: 950px) {
+        #logo {
+            font-size: 35px;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+
+        .game-area {
+            height: 100vh;
+        }
+        .memory-card {
+            height: 120px;
+            width: 120px;
+        }
+        .flip-card img {
+            width: 120px;
+            height: 120px;
+        }
+        .flip-card {
+            background-color: transparent;
+            width: 120px;
+            height: 120px;
+        }
+    }
