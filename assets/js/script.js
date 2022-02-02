@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", shuffleCards);
 
 const cards = document.querySelectorAll('.memory-card');
-// cards.forEach(card => card.addEventListener('click', flipCard));
 
 cards.forEach(card => card.addEventListener('click', () => {
     let cardImage = card.dataset.image;
     flipCard(card, cardImage);
 }));
 
-
-// Just giving some slight pointers here in regards to variables 
 
 // check if card is turned 
 let turnedCard = false;
@@ -54,49 +51,43 @@ function flipCard(cardClicked, cardImage) {
        selectedPairs.push(cardClicked);
 
     }
-
     if (selectedPairs.length === 2) {
-      checkForMatch(selectedPairs[0], selectedPairs[1]);
+      checkForMatch(firstCard, secondCard);
+
     }
 }
 
 /* Reset the board and timer
  */
-function runGame(shuffleCards) {
-
-}
+//function runGame(shuffleCards) {
 
 // Help and adjusted codes from Marina Ferreira https://github.com/code-sketch/memory-game.git 
 
 /* To see if the cards that have been flipped are matching
  */
-function checkForMatch() {
+function checkForMatch(firstCard, secondCard) {
     const isMatch = firstCard.dataset.image === secondCard.dataset.image;
+   console.log(firstCard.dataset.image);
+   console.log(secondCard.dataset.image);
    
-    alert('checking match');
 
-    isMatch ? disableCards() : unflipCards();
-
+    isMatch ? disableCards() : unflipCards(firstCard, secondCard);
     matchedPairs.push(this);
     
     incrementMoves();
-
+    alert('add moves');
 }  
-
-
-
-/* Locks cards that are a match 
- */
+/* Locks cards that are a match */
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-    resetBoard();
+    flipCard();
 }
 
-/* Flipps cards back when not a match
- */
-function unflipCards() {
+/* Flipps cards back when not a match */
+
+function unflipCards(firstCard, secondCard) {
     lockBoard = true;
 
    // setTimeout(() => {
@@ -109,21 +100,21 @@ function unflipCards() {
     resetBoard();
 }
 
+/* Updates the Moves-section in DOM by incrementing one  */
 
-/* Updates the Moves-section in DOM by incrementing one
- */
 function incrementMoves() {
     let oldMove = parseInt(document.getElementById("count-area-moves").innertext);
     document.getElementById("count-area-moves").innertext = ++oldMove;
 }
 
-/* Shuffle cards when game is reset
- */
+/* Shuffle cards when game is reset  */
+
 function resetBoard() {
     [flipCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
 
+/* Shuffle cards */
 function shuffleCards() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * 8);
