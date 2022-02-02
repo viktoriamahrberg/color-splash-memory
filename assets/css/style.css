@@ -60,7 +60,6 @@ img {
     padding: 1%;
     margin: 0 auto;
     border-radius: 10%;
-    border: 1% solid black;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;

@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", shuffleCards);
 const cards = document.querySelectorAll('.memory-card');
 
 cards.forEach(card => card.addEventListener('click', () => {
-    let cardImage = card.dataset.image;
-    flipCard(card, cardImage);
+    flipCard(card);
 }));
 
 // check if card is turned 
@@ -74,7 +73,9 @@ function checkForMatch(firstCard, secondCard) {
      unflipCards();
      console.log('it was not a match')
     }   
+ 
     selectedPairs.splice(0, selectedPairs.length);
+    matchedPairs.push(this);
 }
 
 /* Locks cards that are a match */
@@ -82,23 +83,33 @@ function disableCards(firstCard, secondCard) {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-    flipCard();
 }
 
 /* Flipps cards back when not a match */
 
 function unflipCards() {
     lockBoard = true;
-    console.log("No match, flipping cards back");
     setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
-    resetBoard();
     }, 1500);
-
-    flipCard()
+    
+    for (let card in cards) {
+        if (!matchedPairs.includes(card)) {
+            cards.forEach(card => card.addEventListener('click', () => {
+                flipCard(card);
+            })); 
+        }
+    }
 }
+    //if (!matchedPairs.includes(card)) {
+     //   cards.forEach(card => card.addEventListener('click', () => {
+       //     flipCard(card);
+        // }));
+        //console.log('if-statement works');
+     
+
+
 /* Updates the Moves-section in DOM by incrementing one  */
 
 function incrementMoves() {
