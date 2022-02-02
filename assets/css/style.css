@@ -118,21 +118,8 @@ img {
 
 /* W3 SCHOOLS */
 
-.counts .count-area-left {
-    display: block;
-    float: left;
-    padding-left: 10px;
-    padding-bottom: 20px;
-}
 
-.count-area-right {
-    display: block;
-    float: right;
-    padding-right: 10px;
-    padding-bottom: 20px;
-}
-
-#result-area {
+.result-area {
     text-align: center;
 }
 
