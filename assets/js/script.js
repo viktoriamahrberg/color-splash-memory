@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", shuffleCards);
 
 const cards = document.querySelectorAll('.memory-card');
-cards.forEach(card => card.addEventListener('click', flipCard));
+// cards.forEach(card => card.addEventListener('click', flipCard));
 
-
+cards.forEach(card => card.addEventListener('click', () => {
+    let cardImage = card.dataset.image;
+    flipCard(card, cardImage);
+}));
 
 
 // Just giving some slight pointers here in regards to variables 
@@ -30,25 +33,26 @@ console.log(cards);
 
 
 // Leaving the second card face upwards if its a match and locks bord after second card flipped
-function flipCard() {
-    if (this === firstCard) return;
+
+
+
+function flipCard(cardClicked, cardImage) {
+    if (cardClicked === firstCard) return;
     if (lockBoard) return;
-    this.classList.toggle('flip');
-  
+    cardClicked.classList.toggle('flip');
+    alert('flip first card')
 
     if (!turnedCard) {
         turnedCard = true;
-        firstCard = this;
-        selectedPairs.push(this);
-        
-        return;
+        firstCard = cardClicked;
+        selectedPairs.push(cardClicked);
 
     } else {  //second click
         lockBoard = true;
        turnedCard = false;
-        secondCard = this;
-       selectedPairs.push(this);
-        checkForMatch(selectedPairs[0], selectedPairs[1]);
+        secondCard = cardClicked;
+       selectedPairs.push(cardClicked);
+
     }
 
     if (selectedPairs.length === 2) {
@@ -67,14 +71,19 @@ function runGame(shuffleCards) {
 /* To see if the cards that have been flipped are matching
  */
 function checkForMatch() {
-    let isMatch = firstCard.data-image === secondCard.data-image;
-    
+    const isMatch = firstCard.dataset.image === secondCard.dataset.image;
+   
+    alert('checking match');
 
     isMatch ? disableCards() : unflipCards();
-    
+
     matchedPairs.push(this);
-    alert('You found a match');
-}
+    
+    incrementMoves();
+
+}  
+
+
 
 /* Locks cards that are a match 
  */
@@ -90,14 +99,13 @@ function disableCards() {
 function unflipCards() {
     lockBoard = true;
 
-    setTimeout(() => {
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
+   // setTimeout(() => {
+  //      firstCard.classList.remove('flip');
+   //     secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1500);
+    //}, 1500);
 
-    incrementMoves();
     resetBoard();
 }
 
