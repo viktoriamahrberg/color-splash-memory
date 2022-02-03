@@ -12,12 +12,11 @@ let turnedCard = false;
 // lock the board when 2 cards have been turned while its checking for a match
 let lockBoard = false;
 
-// your cards
+// users cards
 let firstCard;
 let secondCard;
 
 // both cards to enter into an array to check if their data is ===
-// in your game put in ai statement that if selectedPairs.length === 2 run a checkForMatch function
 let selectedPairs = [];
 
 // an array to put the pairs that match into after you created a check for match function
@@ -98,8 +97,6 @@ function disableCards(firstCard, secondCard) {
     lockBoard = false
 }
 
-
-
 /* Flipps cards back when not a match */
 function unflipCards(firstCard, secondCard) {
     setTimeout(() => {
@@ -114,7 +111,6 @@ function unflipCards(firstCard, secondCard) {
             }));
         }
     }
-    //lockBoard = false
 }
 
 /* Updates the Moves-section in DOM by incrementing one  */
@@ -122,16 +118,11 @@ function movesCounter() {
     document.getElementById("count-area-moves").innerHTML = counter++;
 }
 
-
-
-
 /* Shuffle cards when game is reset  */
 function resetBoard() {
     [flipCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
-
-
 
 /* Shuffle cards */
 function shuffleCards() {

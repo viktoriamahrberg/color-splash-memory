@@ -1,6 +1,8 @@
 # Color Splash Memory Game
 A game for the little ones, to learn colors in a playful way. This memory game has four colours hidden below it's cards and by clicking on each card the user is supposed to find its corresponding match!
 
+![Responsiveness](assets/md-images/screenshots/responsivness.png)
+
 ## UX (User and business owners goal)
 
 ### As a business owner:
@@ -18,6 +20,7 @@ The website is a one-page site with focus on the game itself. It is userfriendly
 * Moves: this section counts every move the user uses to find the pairs. One move is eaqual to two cards being showed.
 * Result: At the end of the game the results section shows the final results of amounts of moves and the time which the game was completed on.
 * Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly replocated.
+
 
 ## Technologies used
 
@@ -40,6 +43,7 @@ The website is a one-page site with focus on the game itself. It is userfriendly
 
 ### Functionality testing
 * I used Google Developer tool *Inspector* throughout the development to imediately see the function of the site live and spot bugs. The *Console* has been very useful for Javascript. 
+* The game is intentially missing aria-labels since there were no buttons/links to add this to. 
 
 ### Compatibility testing
 * Site has been tested on devices between 1000px wide and down to 350px in Developer Tools, but mainly on my browser in MacBook Air 11'. 
@@ -58,10 +62,24 @@ I have had more issues than success building this site and although it is not as
 * Data-Image: I set up the card structure in HTML and with data-image attribute attached on each card, however they did not connect to Javascript by flipping. The issue I finally figured with one of the tutors at Code Institute was the placement of 'data-image', not being on the same div as ".memory-card". 
 ![data-image](assets/md-images/screenshots/data-image.png) 
 
-* 
+* Flip Cards: I used inspiration from [Marina Ferreira](https://www.youtube.com/watch?v=zYS4J9m3SsU&list=PLLX1I3KXZ-YH-woTgiCfONMya39-Ty8qw&index=5) to have my card flipped but due to mistakes between CSS and Javascript it did not work and I figured out another CSS structure from W3 Schools with my tutor. 
 
+* Checking cards for match: Here I learnt that the functions need to have argument being passed into the function to work. I started setting up the functions with empty brackets wihch caused issues. 
+Also that the array of the two flipped cards need to be empty in roder for two new cards to be flipped and checked for a match. This I solved with the slice method: *selectedPairs.splice(0, selectedPairs.length);*
 
+* Moves-counter function: This did not work due to a space after *counter* but when I removed that it accumulated the scores. 
+*document.getElementById("count-area-moves").innerHTML = counter++;*
 
+* Overall I have had structural issues due to lack of knowledge, but have improved my skills with a lot of help from the tutors and online videos. 
+It also became much easier when I started to add alerts, and once I got the hung of them add the console.logs to see the issues. 
+
+## Bugs
+
+* Game only flipps three cards: 
+Although spending all awake time on this site the past week I could not figure out the very end and make the game work properly. I believe it is a bug the DOM since game freezes after three cards being flipped. In the console it logs the value of "Window", so it looks like it is stepping out of the "document". 
+![Bug-window](assets/md-images/screenshots/bug-window.png)
+
+* Moves-counter: The counter is set up and works but counts the moves after the third card being flipped. In the console it looks like it's an issue with my logic.
 
 
 
@@ -75,22 +93,37 @@ I ran the site in Lighthouse to check its performance:
 I validated my codes and after a few adjustments at first it ran without any errors:
 
 * [W3C CSS Validator](http://www.css-validator.org/) to validate CSS
-* [Html Checker](https://validator.w3.org/) to test HTML
+* [Html Checker](https://validator.w3.org/) to validate HTML
+* [Jshint Javascript Checker](https://jshint.com/) runs with no errors.
 
-![css-validator](http://www.css-validator.org/)
+![css-validator](assets/md-images/screenshots/css-validator.png)
 ## Deployment
 
+The page has been deployed to Github Pages following below steps:
+
+* On the Github repository page navigate to Settings in the menu field.
+Scroll down to Pages
+* Under Source change the branch to main
+* Press Save
+* The site is published and can be found [here](https://viktoriamahrberg.github.io/color-splash-memory/).
+* To run localy:
+On the Github repository page, click Code button do download zip file
+After download you can extract the file and use it in your local environment.
+
+
 ## Credits
-
-* Assistance and guidance from Code Institute Tutors, especially I would like thank Jo, Ger and John that have all helped me to improve my Javascript skills and actually understand what I was doing.
-
-* Tutorial video from: 
-    * [Code with Ania Kubów](https://www.youtube.com/watch?v=tjyDOHzKN0w)
-    * [Learn Vanilla Javascript: Memory Game Tutorial by Marina Ferreira](https://www.youtube.com/watch?v=zYS4J9m3SsU&list=PLLX1I3KXZ-YH-woTgiCfONMya39-Ty8qw&index=5)
-* Code inspiration from fellow peers at Code Institute - Slack Forum
 
 ### Assets
 * Images from [Pexels](https://www.pexels.com/)
 
+### Code / Tutorial video from: 
+* Assistance and guidance from Code Institute Tutors, I would especially like thank Jo, Ger and John that have all helped me to improve my Javascript skills and actually understand what I was doing.
+* Assistance from my Mentor Adegbenga Adeye
+* [Code with Ania Kubów](https://www.youtube.com/watch?v=tjyDOHzKN0w)
+* [Learn Vanilla Javascript: Memory Game Tutorial by Marina Ferreira](https://www.youtube.com/watch?v=zYS4J9m3SsU&list=PLLX1I3KXZ-YH-woTgiCfONMya39-Ty8qw&index=5) [GitHub](https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js)
+* Code inspiration from fellow peers at Code Institute - Slack Forum
+* [W3 SCHOOLS](https://www.w3schools.com/)
+* [StackOverflow](https://stackoverflow.com/)
+* Transition and 3D-flip effect on cards ![](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card)
 
-### Code
+
