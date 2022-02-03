@@ -33,7 +33,7 @@ function flipCard(cardClicked) {
     if (cardClicked === firstCard) return;
     if (lockBoard) return;
     cardClicked.classList.toggle('flip');
-    console.log(matchedPairs) 
+    console.log(matchedPairs)
 
     if (!turnedCard) { // first card
         turnedCard = true;
@@ -47,37 +47,35 @@ function flipCard(cardClicked) {
         selectedPairs.push(cardClicked);
         console.log(selectedPairs)
 
-        movesCounter(); // count moves
-        
     }
     if (selectedPairs.length === 2) {
         checkForMatch(firstCard, secondCard);
         lockBoard = false
-
-    } 
+        movesCounter(); // count moves
+    }
 }
 
 // Help and adjusted codes from Marina Ferreira https://github.com/code-sketch/memory-game.git 
 
 /* To see if the cards that have been flipped are matching */
 function checkForMatch(firstCard, secondCard) {
-    
+
     const isMatch = firstCard.dataset.image === secondCard.dataset.image;
     console.log(firstCard.dataset.image)
 
 
     if (isMatch) {
-     disableCards(firstCard, secondCard)
-     matchedPairs.push(firstCard)
-     matchedPairs.push(secondCard);
-     lockBoard = false
+        disableCards(firstCard, secondCard)
+        matchedPairs.push(firstCard)
+        matchedPairs.push(secondCard);
+        lockBoard = false
     }
     if (!isMatch) {
-     unflipCards(firstCard, secondCard);
-     selectedPairs = [];
-     lockBoard = false;
-    }   
- 
+        unflipCards(firstCard, secondCard);
+        selectedPairs = [];
+        lockBoard = false;
+    }
+
     selectedPairs.splice(0, selectedPairs.length);
     matchedPairs.push(this);
     lockBoard = false;
@@ -88,16 +86,16 @@ function disableCards(firstCard, secondCard) {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-   for (let card in cards) {
+    for (let card in cards) {
         if (!matchedPairs.includes(card)) {
             cards.forEach(card => card.addEventListener('click', () => {
                 flipCard(card);
-            })); 
-            
+            }));
+
         }
         console.log(card)
     }
-    lockBoard = false 
+    lockBoard = false
 }
 
 
@@ -105,25 +103,24 @@ function disableCards(firstCard, secondCard) {
 /* Flipps cards back when not a match */
 function unflipCards(firstCard, secondCard) {
     setTimeout(() => {
-    firstCard.classList.remove('flip');
-    secondCard.classList.remove('flip');
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
     }, 1500);
-    
+
     for (let card in cards) {
         if (!matchedPairs.includes(card)) {
             cards.forEach(card => card.addEventListener('click', () => {
                 flipCard(card);
-            })); 
+            }));
         }
     }
-    lockBoard = false
+    //lockBoard = false
 }
 
 /* Updates the Moves-section in DOM by incrementing one  */
-function movesCounter () {
-            counter.innerHTML ++;
-            moves ++;
-          }
+function movesCounter() {
+    document.getElementById("count-area-moves").innerHTML = counter++;
+}
 
 
 
