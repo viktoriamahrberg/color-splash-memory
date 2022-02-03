@@ -19,15 +19,16 @@ let secondCard;
 // both cards to enter into an array to check if their data is ===
 let selectedPairs = [];
 
-// an array to put the pairs that match into after you created a check for match function
+// an array to put the pairs that match into after the checkForMatch()
 matchedPairs = [];
 
+// gets the value of moves in HTML
 let counter = document.querySelector("#count-area-moves").innerHTML;
 
-console.log(counter);
 
 
-// Leaving the second card face upwards if its a match and locks bord after second card flipped
+/**  Leaving the second card face upwards if its a match and locks bord after second card flipped 
+ */
 function flipCard(cardClicked) {
     if (cardClicked === firstCard) return;
     if (lockBoard) return;
@@ -38,6 +39,7 @@ function flipCard(cardClicked) {
         turnedCard = true;
         firstCard = cardClicked;
         selectedPairs.push(cardClicked);
+      
 
     } else { // second card
         lockBoard = true;
@@ -45,18 +47,19 @@ function flipCard(cardClicked) {
         secondCard = cardClicked;
         selectedPairs.push(cardClicked);
         console.log(selectedPairs)
+        movesCounter(); // count moves
 
     }
     if (selectedPairs.length === 2) {
         checkForMatch(firstCard, secondCard);
         lockBoard = false
-        movesCounter(); // count moves
+       
     }
 }
 
 // Help and adjusted codes from Marina Ferreira https://github.com/code-sketch/memory-game.git 
 
-/* To see if the cards that have been flipped are matching */
+/** To see if the cards that have been flipped are matching */
 function checkForMatch(firstCard, secondCard) {
 
     const isMatch = firstCard.dataset.image === secondCard.dataset.image;
@@ -80,7 +83,7 @@ function checkForMatch(firstCard, secondCard) {
     lockBoard = false;
 }
 
-/* Locks cards that are a match */
+/** Locks cards that are a match */
 function disableCards(firstCard, secondCard) {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -92,12 +95,12 @@ function disableCards(firstCard, secondCard) {
             }));
 
         }
-        console.log(card)
+
     }
     lockBoard = false
 }
 
-/* Flipps cards back when not a match */
+/** Flipps cards back when not a match */
 function unflipCards(firstCard, secondCard) {
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -113,18 +116,18 @@ function unflipCards(firstCard, secondCard) {
     }
 }
 
-/* Updates the Moves-section in DOM by incrementing one  */
+/** Updates the Moves-section in DOM by incrementing one  */
 function movesCounter() {
     document.getElementById("count-area-moves").innerHTML = counter++;
 }
 
-/* Shuffle cards when game is reset  */
+/** Shuffle cards when game is reset  */
 function resetBoard() {
     [flipCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
 
-/* Shuffle cards */
+/** Shuffle cards */
 function shuffleCards() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * 8);

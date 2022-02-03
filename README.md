@@ -86,6 +86,7 @@ Although spending all awake time on this site the past week I could not figure o
 ## Performance testing
 
 I ran the site in Lighthouse to check its performance:
+
 ![lighthouse](assets/md-images/screenshots/lighthouse.png)
 
 ## Validation
@@ -124,6 +125,6 @@ After download you can extract the file and use it in your local environment.
 * Code inspiration from fellow peers at Code Institute - Slack Forum
 * [W3 SCHOOLS](https://www.w3schools.com/)
 * [StackOverflow](https://stackoverflow.com/)
-* Transition and 3D-flip effect on cards ![](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card)
+* Transition and 3D-flip effect on cards ![W3 SCHOOLS](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card)
 
 

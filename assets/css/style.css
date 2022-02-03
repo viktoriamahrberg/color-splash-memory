@@ -122,6 +122,7 @@ img {
     text-align: center;
 }
 
+/* Media Queries 1200px */
 @media screen and (max-width: 1200px) {
     .game-area {
         height: 120vh;
@@ -148,6 +149,7 @@ img {
     }
 }
 
+/* Media Queries 950px */
 @media screen and (max-width: 950px) {
     .game-area {
         height: 100vh;
@@ -182,10 +184,12 @@ img {
     }
 }
 
+/* Media Queries 765px */
 @media screen and (max-width: 765px) {
     .game-area {
         height: 90vh;
     }
+
     .memory-card {
         height: 100px;
         width: 100px;
@@ -203,6 +207,7 @@ img {
     }
 }
 
+/* Media Queries 650px */
 @media screen and (max-width: 650px) {
     .memory-card {
         height: 90px;
@@ -221,9 +226,9 @@ img {
     }
 }
 
+/* Media Queries 580px */
 @media screen and (max-width: 580px) {
     .game-area {
-
         max-width: 95%;
     }
 
@@ -249,28 +254,35 @@ img {
         height: 80px;
         width: 80px;
     }
+
     .flip-card img {
         width: 80px;
         height: 80px;
     }
+
     .flip-card {
         background-color: transparent;
         width: 80px;
         height: 80px;
     }
 }
+
+/* Media Queries 350px */
 @media screen and (max-width: 350px) {
     .game-area {
         max-width: 100%;
     }
+
     .memory-card {
         height: 65px;
         width: 65px;
     }
+
     .flip-card img {
         width: 65px;
         height: 65px;
     }
+
     .flip-card {
         background-color: transparent;
         width: 65px;
