@@ -52,7 +52,6 @@ img {
     width: 100%;
     margin: 0 auto;
     perspective: 1000px;
-    border: 1px solid black;
 }
 
 .memory-card {
@@ -246,15 +245,35 @@ img {
 }
 
 @media screen and (max-width: 475px) {
-
+    .memory-card {
+        height: 80px;
+        width: 80px;
+    }
     .flip-card img {
         width: 80px;
         height: 80px;
     }
-
     .flip-card {
         background-color: transparent;
         width: 80px;
         height: 80px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .game-area {
+        max-width: 100%;
+    }
+    .memory-card {
+        height: 65px;
+        width: 65px;
+    }
+    .flip-card img {
+        width: 65px;
+        height: 65px;
+    }
+    .flip-card {
+        background-color: transparent;
+        width: 65px;
+        height: 65px;
     }
 }
