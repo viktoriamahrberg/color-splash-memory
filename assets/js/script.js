@@ -23,9 +23,9 @@ let selectedPairs = [];
 // an array to put the pairs that match into after you created a check for match function
 matchedPairs = [];
 
-let oldMove = document.getElementById("count-area-moves").innertext;
+let counter = document.querySelector("#count-area-moves").innerHTML;
 
-
+console.log(counter);
 
 
 // Leaving the second card face upwards if its a match and locks bord after second card flipped
@@ -35,19 +35,20 @@ function flipCard(cardClicked) {
     cardClicked.classList.toggle('flip');
     console.log(matchedPairs) 
 
-    if (!turnedCard) {
+    if (!turnedCard) { // first card
         turnedCard = true;
         firstCard = cardClicked;
         selectedPairs.push(cardClicked);
 
-    } else { //second c
+    } else { // second card
         lockBoard = true;
         turnedCard = false;
         secondCard = cardClicked;
         selectedPairs.push(cardClicked);
         console.log(selectedPairs)
 
-        incrementMoves();
+        movesCounter(); // count moves
+        
     }
     if (selectedPairs.length === 2) {
         checkForMatch(firstCard, secondCard);
@@ -119,9 +120,13 @@ function unflipCards(firstCard, secondCard) {
 }
 
 /* Updates the Moves-section in DOM by incrementing one  */
-function incrementMoves() {
-    document.getElementById("count-area-moves").innertext = ++oldMove;
-}
+function movesCounter () {
+            counter.innerHTML ++;
+            moves ++;
+          }
+
+
+
 
 /* Shuffle cards when game is reset  */
 function resetBoard() {
