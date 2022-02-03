@@ -48,10 +48,11 @@ img {
 .memory-container {
     display: flex;
     flex-wrap: wrap;
-    height: 70%;
+    height: 50%;
     width: 100%;
     margin: 0 auto;
     perspective: 1000px;
+    border: 1px solid black;
 }
 
 .memory-card {
@@ -149,6 +150,10 @@ img {
 }
 
 @media screen and (max-width: 950px) {
+    .game-area {
+        height: 100vh;
+    }
+
     #logo {
         font-size: 35px;
     }
@@ -179,6 +184,9 @@ img {
 }
 
 @media screen and (max-width: 765px) {
+    .game-area {
+        height: 90vh;
+    }
     .memory-card {
         height: 100px;
         width: 100px;
@@ -216,7 +224,7 @@ img {
 
 @media screen and (max-width: 580px) {
     .game-area {
-        height: 120vh;
+
         max-width: 95%;
     }
 
