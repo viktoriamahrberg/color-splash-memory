@@ -70,6 +70,8 @@ Also that the array of the two flipped cards need to be empty in roder for two n
 * Moves-counter function: This did not work due to a space after *counter* but when I removed that it accumulated the scores. 
 *document.getElementById("count-area-moves").innerHTML = counter++;*
 
+* EventListener: After flipping two cards the game did not continue, I realise it would have to be an eventListener being trigged again after the two cards have been checked for a match. But it also had to be removed on the two cards that was a match. I did that with an if-statement *if(!matchedPairs.includes(card))* 
+
 * Overall I have had structural issues due to lack of knowledge, but have improved my skills with a lot of help from the tutors and online videos. 
 It also became much easier when I started to add alerts, and once I got the hung of them add the console.logs to see the issues. 
 
