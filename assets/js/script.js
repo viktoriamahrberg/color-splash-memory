@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", shuffleCards);
 
 const cards = document.querySelectorAll('.memory-card');
 
-cards.forEach(card => card.addEventListener('click', () => {
-    flipCard(card);
-}));
+cards.forEach(card => card.addEventListener('click', (flipCard)))
 
 // check if card is turned 
 let turnedCard = false;
@@ -32,7 +30,7 @@ let counter = document.querySelector("#count-area-moves").innerHTML;
 function flipCard(cardClicked) {
     if (cardClicked === firstCard) return;
     if (lockBoard) return;
-    cardClicked.classList.toggle('flip');
+    this.classList.toggle('flip');
     console.log(matchedPairs)
 
     if (!turnedCard) { // first card
@@ -90,15 +88,13 @@ function disableCards(firstCard, secondCard) {
 
     for (let card in cards) {
         if (!matchedPairs.includes(card)) {
-            cards.forEach(card => card.addEventListener('click', () => {
-                flipCard(card);
-            }));
+            cards.forEach(card)
+            };
 
         }
 
     }
     lockBoard = false
-}
 
 /** Flipps cards back when not a match */
 function unflipCards(firstCard, secondCard) {
@@ -109,12 +105,10 @@ function unflipCards(firstCard, secondCard) {
 
     for (let card in cards) {
         if (!matchedPairs.includes(card)) {
-            cards.forEach(card => card.addEventListener('click', () => {
-                flipCard(card);
-            }));
+            cards.forEach(card)
+            };
         }
     }
-}
 
 /** Updates the Moves-section in DOM by incrementing one  */
 function movesCounter() {

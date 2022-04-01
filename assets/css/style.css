@@ -37,22 +37,32 @@ img {
 
 .game-area {
     height: 125vh;
-    max-width: 70%;
+    max-width: 60%;
     background-color: rgb(241, 247, 246);
     border: solid 2px #8553c0;
     border-radius: 1%;
     margin: 0 auto;
+    position: relative;
 
 }
 
-.memory-container {
-    display: flex;
-    flex-wrap: wrap;
+/* .memory-container   {
     height: 50%;
     width: 100%;
     margin: 0 auto;
     perspective: 1000px;
+   
+} */
+
+.container-1 {
+    position: absolute;
+    display: flex;
+    /* makes container a flexbox*/
+    flex-flow: row wrap;
+    height: fit-content;
+    text-align: center;
 }
+
 
 .memory-card {
     height: calc(50% - 4%);
@@ -63,7 +73,6 @@ img {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    position: relative;
 }
 
 /* W3 SCHOOLS */
@@ -122,17 +131,26 @@ img {
     text-align: center;
 }
 
-/* Media Queries 1200px */
-@media screen and (max-width: 1200px) {
-    .game-area {
-        height: 120vh;
-        max-width: 70%;
+/* Media Queries 1099px */
+@media screen and (max-width: 1099px) {
+    .memory-card {
+        height: 180px;
+        width: 180px;
     }
 
-    .memory-container {
-        height: 0;
+    .flip-card img {
+        width: 180px;
+        height: 180px;
     }
 
+    .flip-card {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Media Queries 974px */
+@media screen and (max-width: 974px) {
     .memory-card {
         height: 150px;
         width: 150px;
@@ -149,22 +167,32 @@ img {
     }
 }
 
-/* Media Queries 950px */
-@media screen and (max-width: 950px) {
+/* Media Queries 820px */
+@media screen and (max-width: 820px) {
     .game-area {
-        height: 100vh;
+        height: 110vh;
+        max-width: 80%;
     }
+}
 
+/* Media Queries 615px */
+@media screen and (max-width: 615px) {
+    .game-area {
+        height: 110vh;
+        max-width: 100%;
+    }
+}
+
+/* Media Queries 500px */
+@media screen and (max-width: 500px) {
     #logo {
-        font-size: 35px;
+        font-size: 30px;
     }
-
+    h2 {
+        font-size: 18px;
+    }
     p {
-        font-size: 0.7rem;
-    }
-
-    .game-area {
-        height: 100vh;
+        font-size: 14px;
     }
 
     .memory-card {
@@ -178,17 +206,16 @@ img {
     }
 
     .flip-card {
-        background-color: transparent;
         width: 120px;
         height: 120px;
     }
-}
 
-/* Media Queries 765px */
-@media screen and (max-width: 765px) {
     .game-area {
         height: 90vh;
     }
+}
+/* Media Queries 405px */
+@media screen and (max-width: 405px) {
 
     .memory-card {
         height: 100px;
@@ -201,55 +228,22 @@ img {
     }
 
     .flip-card {
-        background-color: transparent;
         width: 100px;
         height: 100px;
     }
 }
 
-/* Media Queries 650px */
-@media screen and (max-width: 650px) {
-    .memory-card {
-        height: 90px;
-        width: 90px;
+    /* Media Queries 342px */
+@media screen and (max-width: 342px) {
+    #logo {
+        font-size: 20px;
     }
-
-    .flip-card img {
-        width: 90px;
-        height: 90px;
+    h2 {
+        font-size: 15px;
     }
-
-    .flip-card {
-        background-color: transparent;
-        width: 90px;
-        height: 90px;
+    p {
+        font-size: 10px;
     }
-}
-
-/* Media Queries 580px */
-@media screen and (max-width: 580px) {
-    .game-area {
-        max-width: 95%;
-    }
-
-    .memory-card {
-        height: 100px;
-        width: 100px;
-    }
-
-    .flip-card img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .flip-card {
-        background-color: transparent;
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@media screen and (max-width: 475px) {
     .memory-card {
         height: 80px;
         width: 80px;
@@ -261,31 +255,24 @@ img {
     }
 
     .flip-card {
-        background-color: transparent;
         width: 80px;
         height: 80px;
     }
 }
-
-/* Media Queries 350px */
-@media screen and (max-width: 350px) {
-    .game-area {
-        max-width: 100%;
-    }
-
+/* Media Queries 285px */
+@media screen and (max-width: 285px) {
     .memory-card {
-        height: 65px;
-        width: 65px;
+        height: 80px;
+        width: 80px;
     }
 
     .flip-card img {
-        width: 65px;
-        height: 65px;
+        width: 80px;
+        height: 80px;
     }
 
     .flip-card {
-        background-color: transparent;
-        width: 65px;
-        height: 65px;
+        width: 70px;
+        height: 70px;
     }
 }
