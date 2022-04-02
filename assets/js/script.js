@@ -84,6 +84,7 @@ function disableCards() {
     console.log("disabling cards...")
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    matchedPairs.push(firstCard, secondCard)
     resetBoard();
 }
     // for (let card in cards) {

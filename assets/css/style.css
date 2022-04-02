@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    border: none;
+}
 body {
     font-family: 'Codystar', sans-serif;
     font-size: 2rem;
@@ -23,7 +27,10 @@ h3 {
     font-size: 1.5rem;
 
 }
-
+footer {
+    background-color: #8553c0;
+    text-align: center;
+}
 img {
     width: 100px;
 }
@@ -124,13 +131,43 @@ img {
     object-fit: cover;
 }
 
+.reset-button {
+    height: 50px;
+    width: 160px;
+    background-color: rgb(241, 247, 246);
+    border: solid 2px #8553c0;
+    border-radius: 3%;
+    
+    font-family: 'Codystar', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.reset-button:hover {
+    border: solid 3px #8553c0;
+}
+.reset-button:active {
+    border: solid 3px #8553c0;
+}
+.center {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
 /* W3 SCHOOLS */
 
 
 .result-area {
     text-align: center;
+    margin-top: 10px;
 }
 
+.fa {
+    text-decoration: none;
+    color: rgb(241, 247, 246);
+    margin: 30px;
+    
+
+}
 /* Media Queries 1099px */
 @media screen and (max-width: 1099px) {
     .memory-card {
