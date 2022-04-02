@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", shuffleCards);
 
+
 const cards = document.querySelectorAll('.memory-card');
 
-cards.forEach(card => card.addEventListener('click', (flipCard)))
+cards.forEach((card) => card.addEventListener('click', (flipCard)))
 
 // check if card is turned 
 let turnedCard = false;
@@ -21,110 +22,116 @@ let selectedPairs = [];
 matchedPairs = [];
 
 // gets the value of moves in HTML
-let counter = document.querySelector("#count-area-moves").innerHTML;
+var counter = document.getElementById("count-area-moves").innerHTML;
 
 
 
 /**  Leaving the second card face upwards if its a match and locks bord after second card flipped 
  */
-function flipCard(cardClicked) {
-    if (cardClicked === firstCard) return;
+function flipCard() {
+    console.log("back here")
     if (lockBoard) return;
-    this.classList.toggle('flip');
-    console.log(matchedPairs)
-
+    if (this === firstCard) return;  
+    this.classList.add('flip');
     if (!turnedCard) { // first card
         turnedCard = true;
-        firstCard = cardClicked;
-        selectedPairs.push(cardClicked);
-      
-
-    } else { // second card
-        lockBoard = true;
-        turnedCard = false;
-        secondCard = cardClicked;
-        selectedPairs.push(cardClicked);
-        console.log(selectedPairs)
-        movesCounter(); // count moves
-
-    }
+        firstCard = this;
+        return;   
+        // selectedPairs.push(cardClicked);
+    } 
+    secondCard = this;
+    console.log("checking for match..");
+    selectedPairs.push(firstCard, secondCard);
     if (selectedPairs.length === 2) {
         checkForMatch(firstCard, secondCard);
-        lockBoard = false
-       
+        movesCounter();
+        }
     }
-}
+
+    // }
 
 // Help and adjusted codes from Marina Ferreira https://github.com/code-sketch/memory-game.git 
 
 /** To see if the cards that have been flipped are matching */
 function checkForMatch(firstCard, secondCard) {
-
-    const isMatch = firstCard.dataset.image === secondCard.dataset.image;
-    console.log(firstCard.dataset.image)
-
-
+    let isMatch = firstCard.dataset.image === secondCard.dataset.image;
     if (isMatch) {
-        disableCards(firstCard, secondCard)
-        matchedPairs.push(firstCard)
+        console.log("its a match");
+        disableCards();
+        matchedPairs.push(firstCard);
         matchedPairs.push(secondCard);
-        lockBoard = false
-    }
-    if (!isMatch) {
-        unflipCards(firstCard, secondCard);
-        selectedPairs = [];
-        lockBoard = false;
-    }
 
-    selectedPairs.splice(0, selectedPairs.length);
-    matchedPairs.push(this);
-    lockBoard = false;
+}   else {
+    unflipCards();
 }
+}
+   
+
+    //     lockBoard = false
+    // }
+    // if (!isMatch) {
+    //     unflipCards(firstCard, secondCard);
+    //     selectedPairs = [];
+    //     lockBoard = false;
+    
+
+    // selectedPairs.splice(0, selectedPairs.length);
+    // matchedPairs.push(this);
+    // lockBoard = false;
 
 /** Locks cards that are a match */
-function disableCards(firstCard, secondCard) {
+function disableCards() {
+    console.log("disabling cards...")
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    resetBoard();
+}
+    // for (let card in cards) {
+    //     if (!matchedPairs.includes(card)) {
+    //         cards.forEach(card)
+    //         };
 
-    for (let card in cards) {
-        if (!matchedPairs.includes(card)) {
-            cards.forEach(card)
-            };
-
-        }
-
-    }
-    lockBoard = false
+    //     }
+   
+    
 
 /** Flipps cards back when not a match */
-function unflipCards(firstCard, secondCard) {
+function unflipCards() {
+    console.log("unflipping cards")
+    lockBoard = true;
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-    }, 1500);
-
-    for (let card in cards) {
-        if (!matchedPairs.includes(card)) {
-            cards.forEach(card)
-            };
-        }
+        resetBoard();
+     }, 1000);
     }
+    // for (let card in cards) {
+    //     if (!matchedPairs.includes(card)) {
+    //         cards.forEach(card)
+    //         };
+    //     }
+  
 
 /** Updates the Moves-section in DOM by incrementing one  */
 function movesCounter() {
-    document.getElementById("count-area-moves").innerHTML = counter++;
+    console.log(counter)
+    counter++;
+    document.getElementById("count-area-moves").innerHTML = counter; 
 }
 
 /** Shuffle cards when game is reset  */
 function resetBoard() {
-    [flipCard, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null];
+    turnedCard = false;
+    lockBoard = false;
+    selectedPairs = [];
+    console.log([selectedPairs])
 }
 
 /** Shuffle cards */
 function shuffleCards() {
     cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 8);
+        let randomPos = Math.floor(Math.random() * 6);
         card.style.order = randomPos;
     });
 }
+

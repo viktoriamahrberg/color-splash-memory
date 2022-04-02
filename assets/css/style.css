@@ -262,13 +262,13 @@ img {
 /* Media Queries 285px */
 @media screen and (max-width: 285px) {
     .memory-card {
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
     }
 
     .flip-card img {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .flip-card {
