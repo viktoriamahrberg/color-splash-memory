@@ -21,6 +21,7 @@ p {
 h2 {
     text-align: center;
     font-size: 1.8rem;
+    padding-bottom: 5px;
 }
 
 h3 {
@@ -131,7 +132,7 @@ img {
     object-fit: cover;
 }
 
-.reset-button {
+#reset-button {
     height: 50px;
     width: 160px;
     background-color: rgb(241, 247, 246);

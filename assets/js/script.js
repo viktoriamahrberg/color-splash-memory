@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", shuffleCards);
 
+const resetButton = document.querySelector('#reset-button');
+resetButton.addEventListener('click', resetGame);
 
 const cards = document.querySelectorAll('.memory-card');
-
-cards.forEach((card) => card.addEventListener('click', (flipCard)))
+cards.forEach((card) => card.addEventListener('click', (flipCard)));
 
 // check if card is turned 
 let turnedCard = false;
@@ -15,42 +16,39 @@ let lockBoard = false;
 let firstCard;
 let secondCard;
 
-// both cards to enter into an array to check if their data is ===
+/** both cards to enter into an array to check if their data is === */
 let selectedPairs = [];
 
-// an array to put the pairs that match into after the checkForMatch()
-matchedPairs = [];
+/** an array to put the pairs that match into after the checkForMatch() */
+let matchedPairs = [];
 
-// gets the value of moves in HTML
+/** gets the value of moves in HTML */ 
 var counter = document.getElementById("count-area-moves").innerHTML;
 
 
 
-/**  Leaving the second card face upwards if its a match and locks bord after second card flipped 
- */
+/**  Leaving the second card face upwards if its a match and locks bord after second card flipped */
 function flipCard() {
-    console.log("back here")
+    console.log("back here");
     if (lockBoard) return;
-    if (this === firstCard) return;  
+    if (this === firstCard) return;
     this.classList.add('flip');
     if (!turnedCard) { // first card
         turnedCard = true;
         firstCard = this;
-        return;   
-        // selectedPairs.push(cardClicked);
-    } 
+        return;
+    }
     secondCard = this;
     console.log("checking for match..");
     selectedPairs.push(firstCard, secondCard);
     if (selectedPairs.length === 2) {
         checkForMatch(firstCard, secondCard);
         movesCounter();
-        }
     }
-
-    // }
+}
 
 // Help and adjusted codes from Marina Ferreira https://github.com/code-sketch/memory-game.git 
+// and https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js
 
 /** To see if the cards that have been flipped are matching */
 function checkForMatch(firstCard, secondCard) {
@@ -61,71 +59,49 @@ function checkForMatch(firstCard, secondCard) {
         matchedPairs.push(firstCard);
         matchedPairs.push(secondCard);
 
-}   else {
-    unflipCards();
+    } else {
+        unflipCards();
+    }
 }
-}
-   
-
-    //     lockBoard = false
-    // }
-    // if (!isMatch) {
-    //     unflipCards(firstCard, secondCard);
-    //     selectedPairs = [];
-    //     lockBoard = false;
-    
-
-    // selectedPairs.splice(0, selectedPairs.length);
-    // matchedPairs.push(this);
-    // lockBoard = false;
 
 /** Locks cards that are a match */
 function disableCards() {
-    console.log("disabling cards...")
+    console.log("disabling cards...");
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    matchedPairs.push(firstCard, secondCard)
+    matchedPairs.push(firstCard, secondCard);
     resetBoard();
 }
-    // for (let card in cards) {
-    //     if (!matchedPairs.includes(card)) {
-    //         cards.forEach(card)
-    //         };
-
-    //     }
-   
-    
 
 /** Flipps cards back when not a match */
 function unflipCards() {
-    console.log("unflipping cards")
+    console.log("unflipping cards");
     lockBoard = true;
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
         resetBoard();
-     }, 1000);
-    }
-    // for (let card in cards) {
-    //     if (!matchedPairs.includes(card)) {
-    //         cards.forEach(card)
-    //         };
-    //     }
-  
+    }, 1000);
+}
 
 /** Updates the Moves-section in DOM by incrementing one  */
 function movesCounter() {
-    console.log(counter)
+    console.log(counter);
     counter++;
-    document.getElementById("count-area-moves").innerHTML = counter; 
+    document.getElementById("count-area-moves").innerHTML = counter;
 }
 
-/** Shuffle cards when game is reset  */
+/** Empty selected pairs array when not a match  */
 function resetBoard() {
     turnedCard = false;
     lockBoard = false;
     selectedPairs = [];
-    console.log([selectedPairs])
+    console.log([selectedPairs]);
+}
+
+/** Resetting game  */
+function resetGame(event) {
+    location.reload();
 }
 
 /** Shuffle cards */
@@ -135,4 +111,3 @@ function shuffleCards() {
         card.style.order = randomPos;
     });
 }
-
