@@ -1,7 +1,7 @@
 # Color Splash Memory Game
 A game for the little ones, to learn colors in a playful way. This memory game has four colours hidden below it's cards and by clicking on each card the user is supposed to find its corresponding match!
 
-![Responsiveness](assets/md-images/screenshots/responsivness.png)
+![Responsiveness](assets/md-images/screenshots/responsiveness.png)
 
 ## UX (User and business owners goal)
 
@@ -129,6 +129,6 @@ After download you can extract the file and use it in your local environment.
 * Code inspiration from fellow peers at Code Institute - Slack Forum
 * [W3 SCHOOLS](https://www.w3schools.com/)
 * [StackOverflow](https://stackoverflow.com/)
-* Transition and 3D-flip effect on cards ![W3 SCHOOLS](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card)
+* Transition and 3D-flip effect on cards [W3 SCHOOLS](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card)
 * [Github repo: aadhavanm02 - memory-game](https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js)
 
