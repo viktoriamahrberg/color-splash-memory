@@ -45,7 +45,7 @@ img {
 
 .game-area {
     height: 125vh;
-    max-width: 50%;
+    max-width: 700px;
     background-color: rgb(241, 247, 246);
     border: solid 2px #8553c0;
     border-radius: 1%;
@@ -171,6 +171,10 @@ img {
 }
 /* Media Queries 1099px */
 @media screen and (max-width: 1099px) {
+    .game-area {
+        height: 125vh;
+        max-width: 60%;
+    }
     .memory-card {
         height: 180px;
         width: 180px;
