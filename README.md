@@ -21,9 +21,15 @@ The website is a one-page site with focus on the game itself. It is userfriendly
 * Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly replocated.
 
 ## Colors
-The background has a slight off-white color: #f7f6f1 (rgb(241, 247, 246))
-Features have the purple shade: #8553c0;
-The game is on one pag
+Background: #f7f6f1 (rgb(241, 247, 246))
+
+Features: #8553c0
+
+## Fonts
+
+Body: Poiret One
+Header: Codystar
+
 
 # Technologies used
 
