@@ -20,15 +20,22 @@ The website is a one-page site with focus on the game itself. It is userfriendly
 <!-- * Result: At the end of the game the results section shows the final results of amounts of moves and the time which the game was completed on. -->
 * Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly replocated.
 
-## Colors
-Background: #f7f6f1 (rgb(241, 247, 246))
+* Footer: Consists of social media tags 
 
-Features: #8553c0
+## Future Implementations
+
+A timer could be added to the game, but since the game is for the younger generation I did not think it was a required feature.
+
+## Colors
+- Background: #f7f6f1 (rgb(241, 247, 246))
+- Features: #8553c0
 
 ## Fonts
+- Logo: Nosifer
+- Body: Poiret One
+- Header: Codystar
 
-Body: Poiret One
-Header: Codystar
+Backup fonts: Sans Serif
 
 
 # Technologies used
