@@ -48,8 +48,8 @@ img {
 }
 
 .game-area {
-    height: 700px;
-    max-width: 55%;
+    height: 750px;
+    max-width: 60%;
     background-color: rgb(241, 247, 246);
     border: solid 2px #8553c0;
     border-radius: 1%;
@@ -193,6 +193,10 @@ img {
 
 /* Media Queries 1099px */
 @media screen and (max-width: 1099px) {
+    .game-area {
+        height: 110vh;
+        max-width: 70%;
+    }
     .memory-card {
         height: 180px;
         width: 180px;
@@ -209,21 +213,12 @@ img {
     }
 }
 
+
 /* Media Queries 974px */
 @media screen and (max-width: 974px) {
-    .memory-card {
-        height: 150px;
-        width: 150px;
-    }
-
-    .flip-card img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .flip-card {
-        width: 150px;
-        height: 150px;
+    .game-area {
+        height: 110vh;
+        max-width: 80%;
     }
 }
 
@@ -248,7 +243,6 @@ img {
     #logo {
         font-size: 30px;
     }
-}
 
     h2 {
         font-size: 18px;
@@ -275,25 +269,14 @@ img {
     .game-area {
         height: 90vh;
     }
-/* Media Queries 405px */
-@media screen and (max-width: 405px) {
-
-    .memory-card {
-        height: 100px;
-        width: 100px;
-    }
-
-    .flip-card img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .flip-card {
-        width: 100px;
-        height: 100px;
-    }
 }
 
+/* Media Queries 405px */
+@media screen and (max-width: 405px) {
+    .game-area {
+        max-width: 80%;
+    }
+}
 /* Media Queries 342px */
 @media screen and (max-width: 342px) {
     #logo {
@@ -323,6 +306,7 @@ img {
         height: 80px;
     }
 }
+
 /* Media Queries 285px */
 @media screen and (max-width: 285px) {
     .memory-card {
