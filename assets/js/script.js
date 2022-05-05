@@ -29,11 +29,10 @@ var counter = document.getElementById("count-area-moves").innerHTML;
 
 /**  Leaving the second card face upwards if its a match and locks bord after second card flipped */
 function flipCard() {
-    console.log("back here");
     if (lockBoard) return;
     if (this === firstCard) return;
     this.classList.add('flip');
-    if (!turnedCard) { // first card
+    if (!turnedCard) { 
         turnedCard = true;
         firstCard = this;
         return;
