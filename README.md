@@ -3,12 +3,12 @@ A game for the little ones, to learn colors in a playful way. This memory game h
 
 ![Responsiveness](assets/md-images/screenshots/responsivness.png)
 
-## UX (User and business owners goal)
+# UX
 
-### As a business owner:
+## As a business owner:
 * As a business owner I want to introduce an interactive game to the smaller ones that can learn to identify colors
 
-### As a user:
+## As a user:
 * As a very young user I want to in an interactive way play a game to learn colors
 
 ## Features
@@ -16,32 +16,35 @@ A game for the little ones, to learn colors in a playful way. This memory game h
 The website is a one-page site with focus on the game itself. It is userfriendly and adapted to all sorts of devices. 
 
 * Game is reset and starts as blank once a page is loaded.
-* Timer: The timer is starting once the user starts to interact with the game, and ends when the memory game is solved, with all color matches being found.
 * Moves: this section counts every move the user uses to find the pairs. One move is eaqual to two cards being showed.
-* Result: At the end of the game the results section shows the final results of amounts of moves and the time which the game was completed on.
+<!-- * Result: At the end of the game the results section shows the final results of amounts of moves and the time which the game was completed on. -->
 * Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly replocated.
 
+## Colors
+The background has a slight off-white color: #f7f6f1 (rgb(241, 247, 246))
+Features have the purple shade: #8553c0;
+The game is on one pag
 
-## Technologies used
+# Technologies used
 
-### HTML 
+## HTML 
 * The language to set the structure.
 
-### CSS
+## CSS
 * The language to style the page.
 
-### Google Fonts
+## Google Fonts
 * As a font resource. 
 
-### GitHub
+## GitHub
 * As a software hosting platform to store the project on in a remote location.
 
-### Gitpod
+## Gitpod
 * As a development hosting platform.
 
-## Testing
+# Testing
 
-### Functionality testing
+## Functionality testing
 * I used Google Developer tool *Inspector* throughout the development to imediately see the function of the site live and spot bugs. The *Console* has been very useful for Javascript. 
 * The game is intentially missing aria-labels since there were no buttons/links to add this to. 
 
