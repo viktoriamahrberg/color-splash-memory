@@ -1,5 +1,5 @@
 # Color Splash Memory Game
-A game for the little ones, to learn colors in a playful way. This memory game has four colours hidden below it's cards and by clicking on each card the user is supposed to find its corresponding match!
+A game for the little ones, to learn colors in a playful way. This memory game has three colours hidden under its cards and by clicking on each card the user is supposed to find its corresponding match!
 
 ![Responsiveness](assets/md-images/screenshots/responsiveness.png)
 
@@ -15,7 +15,8 @@ A game for the little ones, to learn colors in a playful way. This memory game h
 
 The website is a one-page site with focus on the game itself. It is userfriendly and adapted to all sorts of devices. 
 
-* Game is reset and starts as blank once a page is loaded.
+* Game is reset and starts as blank once the page is loaded.
+* Cards: When user clicks on a card it flips to show what is hiding beneath, and after two cards have been flipped it turns back or stay open if it is a match.
 * Moves: this section counts every move the user uses to find the pairs. One move is eaqual to two cards being showed.
 * Alert: Once game is completed an alert window pops up congratulating the player.
 * Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly replocated.
@@ -23,11 +24,12 @@ The website is a one-page site with focus on the game itself. It is userfriendly
 
 ## Future Implementations
 
-A timer could be added to the game, but since the game is for the younger generation I did not think it was a required feature.
+A timer could be added to the game, but since the game is for the younger generation it is not a crucial function.
 
 ## Colors
-- Background: #f7f6f1 (rgb(241, 247, 246))
+- Game background: #f7f6f1 (rgb(241, 247, 246))
 - Features: #8553c0
+- Background: #ffffff
 
 ## Fonts
 - Logo: Nosifer
@@ -59,10 +61,19 @@ Backup fonts: Sans Serif
 ## Functionality testing
 * I used Google Developer tool *Inspector* throughout the development to imediately see the function of the site live and spot bugs. The *Console* has been very useful for Javascript. 
 
-### Compatibility testing
+## Compatibility testing
 * Site has been tested on devices between 1099px wide and down to 285px in Developer Tools, but mainly on my browser in MacBook Air 11'. 
 
 ## Issues found during site development
+
+* Game only flipps three cards: 
+![Bug-window](assets/md-images/screenshots/bug-window.png)
+
+* Moves-counter: The counter is set up but counts the moves after the third card being flipped.
+
+I solved above two bugs by sitting down without any stress and tried to understand my logic with console.logging() every tiny step of the flow to understand how it was behaving. This really helped, together with a github repo that I found very useful [Github - memory-game/blob/master](https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js).
+I am proud to say that I managed to solve the logic and make the game function with only these two to my help.
+
 
 ### Layout:
 * Issues with the cards fitting and staying in the container has been a recurring problem on smaller devices. I should have set it up differently, in grids, from the beginning but tried to solve the issue with Media Queries for all devices down to 285px, by changing the size on the cards to fit into its game-container. 
@@ -76,7 +87,7 @@ Going back to the site after some time away from it and where my knowledge has i
 * Data-Image: I set up the card structure in HTML and with data-image attribute attached on each card, however they did not connect to Javascript by flipping. The issue I finally figured with one of the tutors at Code Institute was the placement of 'data-image', not being on the same div as ".memory-card". 
 ![data-image](assets/md-images/screenshots/data-image.png) 
 
-* Flip Cards: I used inspiration from [Marina Ferreira](https://www.youtube.com/watch?v=zYS4J9m3SsU&list=PLLX1I3KXZ-YH-woTgiCfONMya39-Ty8qw&index=5) to have my card flipped but due to mistakes between CSS and Javascript it did not work and I figured out another CSS structure from W3 Schools with my tutor. 
+* Flip Cards: I used inspiration from [Marina Ferreira](https://www.youtube.com/watch?v=zYS4J9m3SsU&list=PLLX1I3KXZ-YH-woTgiCfONMya39-Ty8qw&index=5) to have my card flipped but due to mistakes between CSS and Javascript it did not work and I figured out another CSS structure from W3 Schools. 
 
 * Checking cards for match: Here I learnt that the functions need to have argument being passed into the function to work. I started setting up the functions with empty brackets wihch caused issues. 
 Also that the array of the two flipped cards need to be empty in roder for two new cards to be flipped and checked for a match. This I solved with the slice method: *selectedPairs.splice(0, selectedPairs.length);*
@@ -86,20 +97,8 @@ Also that the array of the two flipped cards need to be empty in roder for two n
 The issue of the counter not adding the first round to the score was solved by changing the code to *counter++;
     document.getElementById("count-area-moves").innerHTML = counter;}*
 
-* Overall I have had structural issues due to lack of knowledge, but have improved my skills with a lot of help from the tutors and online videos. 
+* Overall I had structural issues in the beginning due to lack of knowledge, but have improved my skills with a lot of help from the tutors and online videos. 
 It also became much easier when I started to add alerts, and once I got the hung of them add the console.logs to see the issues. 
-
-
-## Bugs
-
-* Game only flipps three cards: 
-I could not figure out the very end and make the game work properly. I believe it is a bug in the DOM since game freezes after three cards being flipped. In the console it logs the value of "Window", so it looks like it is stepping out of the "document". 
-![Bug-window](assets/md-images/screenshots/bug-window.png)
-
-* Moves-counter: The counter is set up and works but counts the moves after the third card being flipped. In the console it looks like it's an issue with my logic.
-
-I solved above bugs by sitting down without any stress and tried to understand my logic with console.logging every tiny step of the flow to understand how it was behaving. This really helped, together with a github repo that I found very useful [Github - memory-game/blob/master](https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js).
-I am proud to say that I managed to solve the logic and make the game function without any assistance from Tutors nor Slack community. 
 
 
 
@@ -139,6 +138,7 @@ After download you can extract the file and use it in your local environment.
 * Images from [Pexels](https://www.pexels.com/)
 
 ### Code / Tutorial video from: 
+* [Github - memory-game/blob/master](https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js).
 * Assistance and guidance from Code Institute Tutors, I would especially like thank Jo, Ger and John that have all helped me to improve my Javascript skills and actually understand what I was doing.
 * Assistance from my Mentor Adegbenga Adeye
 * [Code with Ania Kubów](https://www.youtube.com/watch?v=tjyDOHzKN0w)

@@ -69,7 +69,7 @@ function checkForGameFinish() {
                 alert('CONGRATULATIONS! You finished the game!');
             }
         },
-        1000);
+        800);
 }
 
 /** Locks cards that are a match */
