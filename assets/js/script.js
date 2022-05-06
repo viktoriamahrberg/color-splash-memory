@@ -87,7 +87,7 @@ function unflipCards() {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
         resetBoard();
-    }, 1000);
+    }, 800);
 }
 
 /** Updates the Moves-section in DOM by incrementing one  */
