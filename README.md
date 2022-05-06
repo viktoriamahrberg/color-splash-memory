@@ -67,6 +67,7 @@ Backup fonts: Sans Serif
 ## Issues found during site development
 
 * Game only flipps three cards: 
+
 ![Bug-window](assets/md-images/screenshots/bug-window.png)
 
 * Moves-counter: The counter is set up but counts the moves after the third card being flipped.

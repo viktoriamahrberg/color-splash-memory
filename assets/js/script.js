@@ -66,7 +66,7 @@ function checkForMatch(firstCard, secondCard) {
 function checkForGameFinish() {
     setTimeout(() => {
             if (matchedPairs.length === (12)) {
-                alert('CONGRATULATIONS! You finished the game!');
+                alert(`CONGRATULATIONS! You finished the game in only ${counter} moves, well done!`);
             }
         },
         800);
@@ -80,7 +80,7 @@ function disableCards() {
     resetBoard();
 }
 
-/** Flipps cards back when not a match */
+/** Flips cards back when not a match */
 function unflipCards() {
     lockBoard = true;
     setTimeout(() => {
