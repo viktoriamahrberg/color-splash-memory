@@ -20,9 +20,9 @@ let secondCard;
 let selectedPairs = [];
 
 /** an array to put the pairs that match into after the checkForMatch() */
-let matchedPairs = [];
+var matchedPairs = [];
 
-/** gets the value of moves in HTML */ 
+/** gets the value of moves in HTML */
 var counter = document.getElementById("count-area-moves").innerHTML;
 
 
@@ -32,13 +32,12 @@ function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
     this.classList.add('flip');
-    if (!turnedCard) { 
+    if (!turnedCard) {
         turnedCard = true;
         firstCard = this;
         return;
     }
     secondCard = this;
-    console.log("checking for match..");
     selectedPairs.push(firstCard, secondCard);
     if (selectedPairs.length === 2) {
         checkForMatch(firstCard, secondCard);
@@ -49,23 +48,32 @@ function flipCard() {
 // Help and adjusted codes from Marina Ferreira https://github.com/code-sketch/memory-game.git 
 // and https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js
 
+
 /** To see if the cards that have been flipped are matching */
 function checkForMatch(firstCard, secondCard) {
     let isMatch = firstCard.dataset.image === secondCard.dataset.image;
     if (isMatch) {
-        console.log("its a match");
         disableCards();
         matchedPairs.push(firstCard);
         matchedPairs.push(secondCard);
-
+        checkForGameFinish();
     } else {
         unflipCards();
     }
 }
 
+/** Check if game is finished and alert player */
+function checkForGameFinish() {
+    setTimeout(() => {
+            if (matchedPairs.length === (12)) {
+                alert('CONGRATULATIONS! You finished the game!');
+            }
+        },
+        1000);
+}
+
 /** Locks cards that are a match */
 function disableCards() {
-    console.log("disabling cards...");
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     matchedPairs.push(firstCard, secondCard);
@@ -74,7 +82,6 @@ function disableCards() {
 
 /** Flipps cards back when not a match */
 function unflipCards() {
-    console.log("unflipping cards");
     lockBoard = true;
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -95,7 +102,6 @@ function resetBoard() {
     turnedCard = false;
     lockBoard = false;
     selectedPairs = [];
-    console.log([selectedPairs]);
 }
 
 /** Resetting game  */
