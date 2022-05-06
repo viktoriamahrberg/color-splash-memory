@@ -17,9 +17,8 @@ The website is a one-page site with focus on the game itself. It is userfriendly
 
 * Game is reset and starts as blank once a page is loaded.
 * Moves: this section counts every move the user uses to find the pairs. One move is eaqual to two cards being showed.
-<!-- * Result: At the end of the game the results section shows the final results of amounts of moves and the time which the game was completed on. -->
+* Alert: Once game is completed an alert window pops up congratulating the player.
 * Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly replocated.
-
 * Footer: Consists of social media tags 
 
 ## Future Implementations
