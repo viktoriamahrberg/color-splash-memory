@@ -1,5 +1,5 @@
 # Color Splash Memory Game
-A game for the little ones, to learn colors in a playful way. This memory game has three colours hidden under its cards and by clicking on each card the user is supposed to find its corresponding match!
+A game for the little ones, to learn colors in a playful way. This memory game has three colours hidden under the cards and by clicking on each card the user is supposed to find its corresponding match!
 
 ![Responsiveness](assets/md-images/screenshots/responsiveness.png)
 
@@ -15,11 +15,11 @@ A game for the little ones, to learn colors in a playful way. This memory game h
 
 The website is a one-page site with focus on the game itself. It is userfriendly and adapted to all sorts of devices. 
 
-* Game is reset and starts as blank once the page is loaded.
-* Cards: When user clicks on a card it flips to show what is hiding beneath, and after two cards have been flipped it turns back or stay open if it is a match.
-* Moves: this section counts every move the user uses to find the pairs. One move is eaqual to two cards being showed.
+* Game is reset and ready to start playing once the page is loaded.
+* Cards: When user clicks on a card it flips to show what is hiding beneath and after two cards have been flipped it turns back or stay open if it is a match.
+* Moves: this section counts every move the user uses to find the pairs. One move is equal to two cards being showed.
 * Alert: Once game is completed an alert window pops up congratulating the player.
-* Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly replocated.
+* Start-again button: Once clicked upon the game is reset and the user can start a new round, where the cards have been shuffled and randomly relocated.
 * Footer: Consists of social media tags 
 
 ## Future Implementations
@@ -47,6 +47,9 @@ Backup fonts: Sans Serif
 ## CSS
 * The language to style the page.
 
+## Javascript
+* The language used for the game to function.
+
 ## Google Fonts
 * As a font resource. 
 
@@ -66,18 +69,18 @@ Backup fonts: Sans Serif
 
 ## Issues found during site development
 
-* Game only flipps three cards: 
+* Game only flips three cards: 
 
 ![Bug-window](assets/md-images/screenshots/bug-window.png)
 
 * Moves-counter: The counter is set up but counts the moves after the third card being flipped.
 
-I solved above two bugs by sitting down without any stress and tried to understand my logic with console.logging() every tiny step of the flow to understand how it was behaving. This really helped, together with a github repo that I found very useful [Github - memory-game/blob/master](https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js).
+I solved above two bugs by sitting down without any stress and tried to understand the logic needed with console.logging() every tiny step of the flow to understand how it was behaving. This really helped, together with a github repo that I found very useful [Github - memory-game/blob/master](https://github.com/aadhavanm02/memory-game/blob/master/js/app2.js).
 I am proud to say that I managed to solve the logic and make the game function with only these two to my help.
 
 
 ### Layout:
-* Issues with the cards fitting and staying in the container has been a recurring problem on smaller devices. I should have set it up differently, in grids, from the beginning but tried to solve the issue with Media Queries for all devices down to 285px, by changing the size on the cards to fit into its game-container. 
+* Issues with the cards fitting and staying in the container has been a recurring problem on smaller devices. I should have set it up differently, in grids, from the beginning but tried to solve the issue with Media Queries for all devices down to 285px, by changing the size on the cards to fit into its game-container and size of game-container. 
 
 * Images were loading very slowly although I resized them, so I used TINYPNG.com to compress them as well. 
 

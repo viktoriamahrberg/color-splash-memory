@@ -56,7 +56,6 @@ img {
 .container-1 {
     position: absolute;
     display: flex;
-    /* makes container a flexbox*/
     flex-flow: row wrap;
     height: fit-content;
     text-align: center;
