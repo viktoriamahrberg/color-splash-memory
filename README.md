@@ -3,6 +3,8 @@ A game for the little ones, to learn colors in a playful way. This memory game h
 
 ![Responsiveness](assets/md-images/screenshots/responsiveness.png)
 
+Live site [here](https://viktoriamahrberg.github.io/color-splash-memory/)
+
 # UX
 
 ## As a business owner:
